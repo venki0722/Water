@@ -18,3 +18,5 @@ if st.button("Predict"):
     prediction = model.predict(input_data)
 
     st.success(f"Prediction: {prediction[0]}")
+    import joblib
+model = joblib.load("model.pkl")
