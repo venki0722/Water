@@ -1,22 +1,14 @@
 import streamlit as st
-import pickle
-import numpy as np
+import joblib
 
-# Load model
-model = pickle.load(open("model.pkl", "rb"))
+model = joblib.load("model.pkl")
 
-st.title("🌾 Crop Prediction App")
+st.title("Water Prediction")
 
-# Inputs from user
 temp = st.number_input("Temperature")
-rainfall = st.number_input("Rainfall")
+rain = st.number_input("Rainfall")
 humidity = st.number_input("Humidity")
 
-# Predict button
 if st.button("Predict"):
-    input_data = np.array([[temp, rainfall, humidity]])
-    prediction = model.predict(input_data)
-
-    st.success(f"Prediction: {prediction[0]}")
-    import joblib
-model = joblib.load("model.pkl")
+    result = model.predict([[temp, rain, humidity]])
+    st.success(result)
