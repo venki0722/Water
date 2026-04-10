@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load model
-model = pickle.load(open("model.pkl", "wb"))
+model = pickle.load(open("model.pkl", "rb"))
 
 st.title("🌾 Crop Prediction App")
 
