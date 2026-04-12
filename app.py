@@ -4,7 +4,7 @@ import pandas as pd
 import plotly.express as px
 
 # Load model
-model = joblib.load('linear_regression_model.pkl')
+model = joblib.load('model.pkl')
 
 # Page config (dashboard look)
 st.set_page_config(page_title="Water Dashboard", layout="wide")
